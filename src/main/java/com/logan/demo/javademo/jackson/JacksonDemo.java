@@ -68,7 +68,9 @@ public class JacksonDemo {
             log.info("json字符串转对象:user={}",user);
 
             /* json字符串转Map*/
-            String json2Map = "{\"user\":{\"name\":\"user1\",\"age\":1}}";
+            String json2Map = "{\"user\":" +
+                    "{\"name\":\"user1\",\"age\":1}" +
+                    "}";
             Map<String,User> userMap = objectMapper.readValue(json2Map,Map.class);
             log.info("json字符串转Map:userMap={}",userMap);
 
@@ -78,10 +80,13 @@ public class JacksonDemo {
             log.info("json字符串转Map:userMap1={}",userMap1);
 
             /* json字符串转List*/
-            String json2List = "[{\"name\":\"user1\",\"age\":1},{\"name\":\"user2\",\"age\":2}]";
+            String json2List = "[" +
+                    "{\"name\":\"user1\",\"age\":1}," +
+                    "{\"name\":\"user2\",\"age\":2}" +
+                    "]";
             List<User> userList = objectMapper.readValue(json2List,objectMapper.getTypeFactory().constructParametricType(ArrayList.class,User.class));
             log.info("json字符串转List:userList={}",userList);
-            
+
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
