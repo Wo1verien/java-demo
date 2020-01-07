@@ -2,6 +2,7 @@ package com.logan.demo.javademo.guava.collections;
 
 import com.google.common.collect.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -22,9 +23,12 @@ public class ImmutableCollections {
         //copyOf
         List<String> list = Lists.newArrayList("a", "b");
         Set<Integer> set = Sets.newHashSet(1, 2, 3);
+        HashMap <String,Integer> hashMap = Maps.newHashMap(ImmutableMap.of("a", 1, "b", 2, "c", 3));
         ImmutableSet<String> immutableSet1 = ImmutableSet.copyOf(list);
         ImmutableSet<Integer> immutableSet2 = ImmutableSet.copyOf(set);
+        ImmutableMap<String,Integer> integerImmutableMap1 = ImmutableMap.copyOf(hashMap);
         System.out.println(immutableSet2);
+        System.out.println(integerImmutableMap1);
 
         //builder
         ImmutableList<String> immutableList =
@@ -33,6 +37,7 @@ public class ImmutableCollections {
                         .add("hello")
                         .addAll(list)
                         .add(String.valueOf(immutableSet1))
+                        .add("hello")
                         .build();
         System.out.println(immutableList);
 

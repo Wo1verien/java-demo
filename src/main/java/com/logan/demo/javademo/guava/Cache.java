@@ -41,7 +41,7 @@ public class Cache {
         System.out.println(cache.get("aa"));
         System.out.println(cache.get("bb"));
         //除了在build的时候设置没有key的调用方法外我们还能在调用的时候手动写
-        String key ="bb";
+        String key ="cc";
         System.out.println(cache.get(key, new Callable<String>() {
             @Override
             public String call() throws Exception {
@@ -51,6 +51,12 @@ public class Cache {
                 return "empty1";
             }
         }));
+        System.out.println(cache.get("cc"));
+        System.out.println(cache.get("bb"));
+        System.out.println(cache.get("newEmpty"));
+
+        System.out.println(cache.getAll(Lists.newArrayList("aa","bb")));
+        System.out.println(cache.asMap());
 
         //缓存回收
         //除了不能超过大小和设定的时间自动回收外还可以调用方法手动回收

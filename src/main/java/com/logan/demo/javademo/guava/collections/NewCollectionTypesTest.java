@@ -42,6 +42,7 @@ public class NewCollectionTypesTest {
     public void multimapTest(){
         //Multimap系列接口集合 和Multiset很相似 可以理解成Multiset的map版本 对应的实现将上面的对应map改为Multimap
         //Multimap主要是为了一个键映射到多个值。换句话说，Multimap是把键映射到任意多个值的一般方式。
+        //Map<Integer,Set<String>>
         Multimap<Integer,String> multimap = HashMultimap.create();
         multimap.put(1,"a");
         multimap.put(1,"a");

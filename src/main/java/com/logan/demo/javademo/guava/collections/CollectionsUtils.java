@@ -17,7 +17,7 @@ public class CollectionsUtils {
     public static void main(String[] args) {
         //Lists
         List<Integer> integerList = Ints.asList(1,2,3,4,5);
-        List<String> stringList = Lists.newArrayList("alpha","beta","gamma");
+        List<String> stringList = Lists.newArrayList("alpha","beta","gamma","α","β", "γ","111");
         //反转list
         System.out.println(Lists.reverse(integerList));
         //指定大小分隔
