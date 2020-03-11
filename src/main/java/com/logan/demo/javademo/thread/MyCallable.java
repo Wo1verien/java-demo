@@ -9,7 +9,9 @@ import java.util.concurrent.Callable;
  * @author changzheng
  */
 public class MyCallable implements Callable<Integer> {
-    //与run()方法不同的是，call()方法具有返回值
+    /**
+     * 与run()方法不同的是，call()方法具有返回值
+     */
     @Override
     public Integer call() throws Exception{
         System.out.println("子线程在进行计算");

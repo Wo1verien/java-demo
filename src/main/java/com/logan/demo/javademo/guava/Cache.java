@@ -40,6 +40,7 @@ public class Cache {
         cache.put("aa","11");
         System.out.println(cache.get("aa"));
         System.out.println(cache.get("bb"));
+        cache.put("bb","update");
         //除了在build的时候设置没有key的调用方法外我们还能在调用的时候手动写
         String key ="cc";
         System.out.println(cache.get(key, new Callable<String>() {
